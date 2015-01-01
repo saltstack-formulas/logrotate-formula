@@ -1,0 +1,26 @@
+{% set logrotate = salt['grains.filter_by']({
+    'RedHat': {
+        'pkg'            : 'logrotate',
+        'service'        : 'crond',
+        'conf_file'      : '/etc/logrotate.conf',
+        'include_dir'    : '/etc/logrotate.d',
+        'user'           : 'root',
+        'group'          : 'root',
+    },
+    'Arch': {
+        'pkg'            : 'logrotate',
+        'service'        : 'logrotate.timer',
+        'conf_file'      : '/etc/logrotate.conf',
+        'include_dir'    : '/etc/logrotate.d',
+        'user'           : 'root',
+        'group'          : 'root',
+    },
+    'Debian': {
+        'pkg'            : 'logrotate',
+        'service'        : 'crond',
+        'conf_file'      : '/etc/logrotate.conf',
+        'include_dir'    : '/etc/logrotate.d',
+        'user'           : 'root',
+        'group'          : 'root',
+    },
+}, merge=salt['pillar.get']('logrotate:lookup')) %}
