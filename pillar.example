@@ -1,1 +1,5 @@
-none at the moment
+logrotate:
+
+  lookup:
+    pkg: 'logrotate'
+    service: 'crond'
