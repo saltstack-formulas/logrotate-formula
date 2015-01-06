@@ -1,7 +1,7 @@
 {% set logrotate = salt['grains.filter_by']({
     'RedHat': {
         'pkg'            : 'logrotate',
-        'service'        : 'crond',
+        'service'        : 'cron',
         'conf_file'      : '/etc/logrotate.conf',
         'include_dir'    : '/etc/logrotate.d',
         'user'           : 'root',
@@ -17,7 +17,7 @@
     },
     'Debian': {
         'pkg'            : 'logrotate',
-        'service'        : 'crond',
+        'service'        : 'cron',
         'conf_file'      : '/etc/logrotate.conf',
         'include_dir'    : '/etc/logrotate.d',
         'user'           : 'root',
