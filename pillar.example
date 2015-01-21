@@ -1,5 +1,8 @@
+# vim: sts=2 ts=2 sw=2 et ai
 logrotate:
-
-  lookup:
-    pkg: 'logrotate'
-    service: 'crond'
+  pkg: 'logrotate'
+  service: 'crond'
+  jobs:
+    "/home/www/billing.irknet.ru/logs/mysql_logs":
+      - "mounthly"
+      - "month"
