@@ -1,7 +1,8 @@
 # vim: sts=2 ts=2 sw=2 et ai
 logrotate:
-  pkg: 'logrotate'
-  service: 'crond'
+  lookup:
+    pkg: 'logrotate'
+    service: 'crond'
   jobs:
     "/tmp/var/log/mysql/error":
       - "weekly"
