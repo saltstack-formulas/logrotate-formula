@@ -3,6 +3,12 @@ logrotate:
   pkg: 'logrotate'
   service: 'crond'
   jobs:
-    "/home/www/billing.irknet.ru/logs/mysql_logs":
-      - "mounthly"
-      - "month"
+    "/tmp/var/log/mysql/error":
+      - "weekly"
+      - "missingok"
+      - "rotate 52"
+      - "compress"
+      - "delaycompress"
+      - "notifempty"
+      - "create 640 root adm"
+      - "sharedscripts"
