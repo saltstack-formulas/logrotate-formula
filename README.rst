@@ -23,8 +23,11 @@ Installs the ``logrotate`` package and service/timer/cron.
 ``logrotate.config``
 --------------------
 
+Manages logrotate config and include dir.
+
 ``logrotate.jobs``
 ------------------
+
 Create custom job for logrotate.
 
-Manages logrotate config and include dir.
+
