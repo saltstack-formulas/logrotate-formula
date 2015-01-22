@@ -1,5 +1,6 @@
 # vim: sts=2 ts=2 sw=2 et ai
 {% from "logrotate/map.jinja" import logrotate with context %}
+{% set jobs = salt['pillar.get']('logrotate:jobs') %}
 
 include:
   - logrotate
@@ -14,7 +15,7 @@ logrotate_directory:
     - require:
       - pkg: logrotate
 
-{% for key,value in logrotate.jobs.iteritems() %}
+{% for key,value in jobs.iteritems() %}
 {{key}}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
