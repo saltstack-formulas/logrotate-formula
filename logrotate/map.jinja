@@ -23,4 +23,8 @@
         'user'           : 'root',
         'group'          : 'root',
     },
-}, merge=salt['pillar.get']('logrotate:lookup')) %}
+  }, merge=salt['grains.filter_by']({
+    'Fedora': {
+      'service' : 'crond',
+    },
+}, grain='os', merge=salt['pillar.get']('logrotate:lookup'))) %}
