@@ -1,7 +1,7 @@
 {% set logrotate = salt['grains.filter_by']({
     'RedHat': {
         'pkg'            : 'logrotate',
-        'service'        : 'cron',
+        'service'        : 'crond',
         'conf_file'      : '/etc/logrotate.conf',
         'include_dir'    : '/etc/logrotate.d',
         'user'           : 'root',
@@ -31,8 +31,4 @@
         'user'           : 'root',
         'group'          : 'root',
     },
-  }, merge=salt['grains.filter_by']({
-    'Fedora': {
-      'service' : 'crond',
-    },
-}, grain='os', merge=salt['pillar.get']('logrotate:lookup'))) %}
+  }, merge=salt['pillar.get']('logrotate:lookup')) %}
