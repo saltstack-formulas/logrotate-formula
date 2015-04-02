@@ -5,10 +5,10 @@
 include:
   - logrotate
 
-{% for key,value in jobs.iteritems() %}
-{{key}}:
+{% for job_name,value in jobs.iteritems() %}
+{{ value.path }}:
   file.managed:
-    - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
+    - name: {{ logrotate.include_dir }}/{{ job_name }}
     - source: salt://logrotate/templates/job.tmpl
     - template: jinja
     - user: {{ salt['pillar.get']('logrotate:config:user', logrotate.user) }}
@@ -19,6 +19,6 @@ include:
     - watch_in:
       - service: {{ logrotate.service }}
     - context:
-      path: {{ key }}
-      data: {{ value }}
+      path: {{ value.path }}
+      data: {{ value.data }}
 {%- endfor -%}
