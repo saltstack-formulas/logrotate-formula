@@ -6,7 +6,7 @@ include:
   - logrotate
 
 {% for key,value in jobs.iteritems() %}
-{{key}}:
+logrotate_{{key}}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
     - source: salt://logrotate/templates/job.tmpl
@@ -19,6 +19,11 @@ include:
     - watch_in:
       - service: {{ logrotate.service }}
     - context:
+      {% if value is mapping %}
+      path: {{ value.get('path', key) }}
+      data: {{ value.get('config', []) }}
+      {% else %}
       path: {{ key }}
       data: {{ value }}
+      {% endif %}
 {%- endfor -%}

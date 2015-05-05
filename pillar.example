@@ -4,12 +4,24 @@ logrotate:
     pkg: logrotate
     service: crond
   jobs:
-    /tmp/var/log/mysql/error:
-      - weekly
-      - missingok
-      - rotate 52
-      - compress
-      - delaycompress
-      - notifempty
-      - create 640 root adm
-      - sharedscripts
+      /tmp/var/log/mysql/error:
+      config:
+        - weekly
+        - missingok
+        - rotate 52
+        - compress
+        - delaycompress
+        - notifempty
+        - create 640 root adm
+        - sharedscripts
+    mysql:
+      path: /tmp/var/log/mysql/*.log
+      config:
+        - weekly
+        - missingok
+        - rotate 52
+        - compress
+        - delaycompress
+        - notifempty
+        - create 640 root adm
+        - sharedscripts
