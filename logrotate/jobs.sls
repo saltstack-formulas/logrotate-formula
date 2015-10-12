@@ -1,6 +1,6 @@
 # vim: sts=2 ts=2 sw=2 et ai
 {% from "logrotate/map.jinja" import logrotate with context %}
-{% set jobs = salt['pillar.get']('logrotate:jobs') %}
+{% set jobs = salt['pillar.get']('logrotate:jobs', {}) %}
 
 include:
   - logrotate
