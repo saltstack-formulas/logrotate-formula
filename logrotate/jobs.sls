@@ -20,7 +20,7 @@ logrotate_{{key}}:
       - service: {{ logrotate.service }}
     - context:
       {% if value is mapping %}
-      path: {{ value.get('path', key) }}
+      path: {{ value.get('path', []) }}
       data: {{ value.get('config', []) }}
       {% else %}
       path: {{ key }}
