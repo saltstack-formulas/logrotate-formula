@@ -15,7 +15,8 @@ logrotate:
         - create 640 root adm
         - sharedscripts
     mysql:
-      path: /tmp/var/log/mysql/*.log
+      path: 
+        - /tmp/var/log/mysql/*.log
       config:
         - weekly
         - missingok
