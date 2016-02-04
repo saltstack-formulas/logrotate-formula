@@ -31,4 +31,12 @@
         'user'           : 'root',
         'group'          : 'root',
     },
+    'FreeBSD': {
+        'pkg'            : 'logrotate',
+        'service'        : 'cron',
+        'conf_file'      : '/usr/local/etc/logrotate.conf',
+        'include_dir'    : '/usr/local/etc/logrotate.d',
+        'user'           : 'root',
+        'group'          : 'wheel',
+    },
   }, merge=salt['pillar.get']('logrotate:lookup')) %}
