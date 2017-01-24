@@ -6,7 +6,6 @@ logrotate:
   service.running:
     - name: {{ logrotate.service }}
     - enable: True
-    - reload: True
 
 logrotate_directory:
   file.directory:

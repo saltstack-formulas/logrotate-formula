@@ -13,7 +13,4 @@ logrotate_config:
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
     - require:
       - pkg: logrotate
-    - watch_in:
-      - service: {{ logrotate.service }}
-
 
