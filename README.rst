@@ -3,7 +3,7 @@ logrotate
 Install and configure logrotate on a machine.
 
 The config files are per OS.
-At the moment only Debian, RedHat and Archlinux supported with this formula
+At the moment only Debian, RedHat, Scientific Linux and Archlinux supported with this formula
 
 .. note::
     See the full `Salt Formulas installation and usage instructions
