@@ -7,6 +7,14 @@
         'user'           : 'root',
         'group'          : 'root',
     },
+    'ScientificLinux': {
+        'pkg'            : 'logrotate',
+        'service'        : 'crond',
+        'conf_file'      : '/etc/logrotate.conf',
+        'include_dir'    : '/etc/logrotate.d',
+        'user'           : 'root',
+        'group'          : 'root',
+    },
     'Arch': {
         'pkg'            : 'logrotate',
         'service'        : 'logrotate.timer',
