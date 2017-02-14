@@ -1,5 +1,5 @@
 {%- from "logrotate/map.jinja" import logrotate with context -%}
-{%- set config = pillar.get('logrotate:default_config', logrotate.default_config) -%}
+{%- set config = salt['pillar.get']('logrotate:default_config', logrotate.default_config) -%}
 
 {%- set processed_parameters = [] -%}
 
