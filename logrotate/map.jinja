@@ -40,11 +40,9 @@
     merge=os_family_map) or {}
 %}
 
-{% do default_settings.logrotate.update(os_map) %}
-
-{% set logrotate = salt['pillar.get'](
-        'logrotate',
-        default=default_settings.logrotate,
-        merge=True
+{% set logrotate = salt['grains.filter_by'](
+        default_settings,
+        merge=os_map,
+        base='logrotate',
     )
 %}
