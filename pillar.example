@@ -3,6 +3,12 @@ logrotate:
   lookup:
     pkg: logrotate
     service: crond
+  default_config:
+    - weekly
+    - rotate: 52
+    - create
+    - compress
+    - dateext
   jobs:
       /tmp/var/log/mysql/error:
       config:
