@@ -8,4 +8,9 @@ logrotate:
   user: root
   group: root
   service: cron
+  login_records_jobs: True
+  default_config:
+    weekly: True
+    rotate: 4
+    create: True
 
