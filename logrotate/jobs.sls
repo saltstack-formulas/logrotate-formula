@@ -15,7 +15,7 @@ logrotate_{{key}}:
     - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
     - require:
-      - pkg: logrotate
+      - pkg: logrotate-pkg
     - context:
       {% if value is mapping %}
       path: {{ value.get('path', []) }}

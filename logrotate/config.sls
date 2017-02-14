@@ -11,6 +11,12 @@ logrotate_config:
     - user: {{ salt['pillar.get']('logrotate:config:user', logrotate.user) }}
     - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
-    - require:
-      - pkg: logrotate
+
+logrotate_directory:
+  file.directory:
+    - name: {{ logrotate.include_dir }}
+    - user: {{ salt['pillar.get']('logrotate:config:user', logrotate.user) }}
+    - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
+    - mode: 755
+    - makedirs: True
 
