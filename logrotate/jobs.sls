@@ -5,8 +5,8 @@
 include:
   - logrotate
 
-{% for key,value in jobs.items() %}
-logrotate_{{key}}:
+{% for key, value in jobs.items() %}
+logrotate-{{ key }}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
     - source: salt://logrotate/templates/job.tmpl

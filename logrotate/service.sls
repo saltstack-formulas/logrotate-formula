@@ -13,5 +13,5 @@ logrotate:
     - enable: True
     - require:
       - pkg: logrotate-pkg
-      - file: logrotate_config
-      - file: logrotate_directory
+      - file: logrotate-config
+      - file: logrotate-directory
