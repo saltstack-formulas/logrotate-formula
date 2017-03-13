@@ -5,8 +5,8 @@
 include:
   - logrotate
 
-{% for key,value in jobs.items() %}
-logrotate_{{key}}:
+{% for key, value in jobs.items() %}
+logrotate-{{ key }}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
     - source: salt://logrotate/templates/job.tmpl
@@ -15,7 +15,7 @@ logrotate_{{key}}:
     - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
     - require:
-      - pkg: logrotate
+      - pkg: logrotate-pkg
     - context:
       {% if value is mapping %}
       path: {{ value.get('path', []) }}

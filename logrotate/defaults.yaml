@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+logrotate:
+  pkg: logrotate
+  conf_file: '/etc/logrotate.conf'
+  include_dir: '/etc/logrotate.d'
+  user: root
+  group: root
+  service: cron
+  login_records_jobs: True
+  default_config:
+    weekly: True
+    rotate: 4
+    create: True
+

@@ -1,0 +1,70 @@
+{%- from "logrotate/map.jinja" import logrotate with context -%}
+{%- set config = salt['pillar.get']('logrotate:default_config', logrotate.default_config) -%}
+
+{%- set processed_parameters = [] -%}
+
+{%- macro set_parameter(parameter, default=None) -%}
+{%- set value = config.get(parameter, default) -%}
+{%- if value is not none %}
+  {%- if value is sameas true -%}
+{{ parameter }}
+  {%- elif value is sameas false -%}
+no{{ parameter }}
+  {%- elif value is string or value is number -%}
+{{ parameter }} {{ value }}
+  {%- else -%}
+{{ value }}
+  {%- endif %}
+{%- do processed_parameters.append(parameter) %}
+{%- endif %}
+{%- endmacro -%}
+
+# Managed by saltstack
+#
+# See "man logrotate" for details.
+
+# log files rotation period
+{% for period in ['hourly', 'daily', 'weekly', 'yearly'] -%}
+{{ set_parameter(period) }}
+{%- endfor %}
+
+# keep x periods worth of backlogs
+{{ set_parameter('rotate', 4) }}
+
+# create new (empty) log files after rotating old ones
+{{ set_parameter('create', True) }}
+
+# use date as a suffix of the rotated file
+{{ set_parameter('dateext', False) }}
+
+# change this if you want your log files compressed
+{{ set_parameter('compress', False) }}
+
+{#- Accept arbitrary parameters #}
+{%- for parameter in config %}
+  {%- if parameter not in processed_parameters %}
+{{ set_parameter(parameter) }}
+  {%- endif %}
+{%- endfor %}
+
+# packages drop log rotation information into this directory
+include {{ logrotate.include_dir }}
+
+{% if logrotate.login_records_jobs -%}
+# no packages own wtmp and btmp -- we'll rotate them here
+/var/log/wtmp {
+    monthly
+    create 0664 root utmp
+    minsize 1M
+    rotate 1
+}
+
+/var/log/btmp {
+    missingok
+    monthly
+    create 0600 root utmp
+    rotate 1
+}
+{%- endif %}
+
+# system-specific logs may be configured here
