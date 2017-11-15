@@ -10,7 +10,7 @@ logrotate:
     compress: True
     dateext: True
   jobs:
-      /tmp/var/log/mysql/error:
+    /tmp/var/log/mysql/error:
       config:
         - weekly
         - missingok
