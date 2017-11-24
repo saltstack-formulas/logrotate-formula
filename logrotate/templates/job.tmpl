@@ -1,9 +1,12 @@
 # vim: sw=2 sts=2 ts=2 sw et
+#
+# This file is managed by salt. Do not edit by hand.
+#
 {% for onepath in path %}
 {{ onepath }}
 {%- endfor %}
 {
-  {% for item in data %}
+  {%- for item in data %}
   {{ item }}
   {%- endfor %}
 }
