@@ -1,8 +1,10 @@
 # vim: sts=2 ts=2 sw=2 et ai
+
 logrotate:
-  lookup:
-    pkg: logrotate
-    service: crond
+  # default OS values can be overridden in 'lookup' dict
+  #lookup:
+    #pkg: logrotate
+    #service: crond
   default_config:
     weekly: True
     rotate: 52
