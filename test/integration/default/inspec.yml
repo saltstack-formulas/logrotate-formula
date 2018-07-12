@@ -1,5 +1,5 @@
-name: shorewall
-title: Shorewall Profile
+name: logrotate
+title: Logrotate Profile
 maintainer: Eric Veiras Galisson
 copyright: Eric Veiras Galisson
 copyright_email: eric AT sietch-tabr DOT com
