@@ -6,16 +6,20 @@ include:
   - logrotate
 
 {% for key, value in jobs.items() %}
+  {% set contents = value.get('contents', False) %}
 logrotate-{{ key }}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
-    - source: salt://logrotate/templates/job.tmpl
-    - template: jinja
     - user: {{ salt['pillar.get']('logrotate:config:user', logrotate.user) }}
     - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
     - require:
       - pkg: logrotate-pkg
+    {% if contents %}
+    - contents: {{ contents | yaml_encode }}
+    {% else %}
+    - source: salt://logrotate/templates/job.tmpl
+    - template: jinja
     - context:
       {% if value is mapping %}
       path: {{ value.get('path', []) }}
@@ -24,4 +28,6 @@ logrotate-{{ key }}:
       path: {{ key }}
       data: {{ value }}
       {% endif %}
+    {% endif %}
 {%- endfor -%}
+
