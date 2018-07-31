@@ -47,3 +47,23 @@ logrotate:
         - postrotate
         -   /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
         - endscript
+    nginx:
+      contents: |
+        /var/log/nginx/*.log{
+          weekly
+          missingok
+          compress
+          delaycompress
+          notifempty
+          create 0640 www-data adm
+          sharedscripts
+          prerotate
+            if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
+              run-parts /etc/logrotate.d/httpd-prerotate; \
+            fi \
+          endscript
+          postrotate
+            invoke-rc.d nginx rotate >/dev/null 2>&1
+          endscript
+        }
+
