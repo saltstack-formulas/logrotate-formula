@@ -1,0 +1,3 @@
+Ubuntu:
+  default_config:
+    su: root syslog

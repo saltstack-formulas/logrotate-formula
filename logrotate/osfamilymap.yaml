@@ -1,0 +1,27 @@
+Arch:
+  service: logrotate.timer
+  default_config:
+    tabooext: + .pacorig .pacnew .pacsave
+Debian:
+  default_config:
+    compress: True
+RedHat:
+  service: crond
+  default_config:
+    dateext: True
+Suse:
+  login_records_jobs: False
+  default_config:
+    dateext: True
+    compresscmd: /usr/bin/xz
+    uncompresscmd: /usr/bin/xzdec
+Gentoo:
+  pkg: app-admin/logrotate
+  service: cronie
+  default_config:
+    tabooext: + .keep
+    dateext: True
+FreeBSD:
+  conf_file: /usr/local/etc/logrotate.conf
+  include_dir: /usr/local/etc/logrotate.d
+  group: wheel
