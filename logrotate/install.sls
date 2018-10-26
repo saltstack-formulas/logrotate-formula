@@ -3,6 +3,7 @@
 
 {% from "logrotate/map.jinja" import logrotate with context %}
 
+{% set pkgs = [logrotate.pkg] if logrotate.pkg is string else logrotate.pkg %}
 logrotate-pkg:
   pkg.installed:
-    - name: {{ logrotate.pkg }}
+    - pkgs: {{ pkgs }}

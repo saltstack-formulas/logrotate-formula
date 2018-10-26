@@ -20,7 +20,14 @@ describe file('/etc/logrotate.d') do
   its('mode') { should cmp '0755' }
 end
 
-describe service('cron') do
+case os[:name]
+when 'redhat', 'centos', 'fedora'
+  service = 'crond'
+else
+  service = 'cron'
+end
+
+describe service(service) do
   it { should be_installed }
   it { should be_enabled }
   it { should be_running }
