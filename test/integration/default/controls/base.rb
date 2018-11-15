@@ -2,7 +2,13 @@
 
 title 'Test logrotate installation'
 
-describe package('logrotate') do
+case os[:name]
+when 'redhat', 'centos', 'fedora'
+  pkg = 'cronie'
+else
+  pkg = 'logrotate'
+end
+describe package(pkg) do
   it { should be_installed }
 end
 

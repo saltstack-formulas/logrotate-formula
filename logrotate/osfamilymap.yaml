@@ -6,6 +6,7 @@ Debian:
   default_config:
     compress: True
 RedHat:
+  pkg: cronie
   service: crond
   default_config:
     dateext: True
