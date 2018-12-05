@@ -7,8 +7,7 @@ describe file('/etc/logrotate.d/error') do
   it { should be_owned_by 'root' }
   it { should be_grouped_into 'root' }
   its('mode') { should cmp '0644' }
-  # FIXME
-  #its('content') { should include '/tmp/var/log/mysql/error' }
+  its('content') { should include '/tmp/var/log/mysql/error' }
   its('content') { should include 'weekly' }
   its('content') { should include 'missingok' }
   its('content') { should include 'rotate 52' }
