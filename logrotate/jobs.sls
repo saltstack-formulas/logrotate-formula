@@ -22,10 +22,10 @@ logrotate-{{ key }}:
     - template: jinja
     - context:
       {% if value is mapping %}
-      path: {{ value.get('path', []) }}
+      path: {{ value.get('path', [key]) }}
       data: {{ value.get('config', []) }}
       {% else %}
-      path: {{ key }}
+      path: [ {{ key }} ]
       data: {{ value }}
       {% endif %}
     {% endif %}
