@@ -6,4 +6,4 @@
 {% set pkgs = [logrotate.pkg] if logrotate.pkg is string else logrotate.pkg %}
 logrotate-pkg:
   pkg.installed:
-    - pkgs: {{ pkgs }}
+    - pkgs: {{ pkgs | json }}
