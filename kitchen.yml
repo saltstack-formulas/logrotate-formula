@@ -115,8 +115,13 @@ provisioner:
   salt_copy_filter:
     - .kitchen
     - .git
+  dependencies:
+    - name: states
+      path: ./test/salt
   state_top:
     base:
+      'G@os_family:Suse':
+        - states.cron
       '*':
         - logrotate
         - logrotate.jobs
