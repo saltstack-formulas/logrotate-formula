@@ -1,0 +1,9 @@
+name: logrotate
+os: Debian, Ubuntu, Raspbian, RedHat, Fedora, CentOS, Suse, openSUSE
+os_family: Debian, RedHat, Suse
+version: 1.0.0rc
+release: 1
+minimum_version: 2016.11
+summary: logrotate formula
+description: Formula to setup logrotate
+top_level_dir: logrotate
