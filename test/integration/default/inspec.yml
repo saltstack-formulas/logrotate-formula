@@ -1,6 +1,6 @@
-name: logrotate
-title: logrotate Formula
-maintainer: Saltstack-formulas
+name: default
+title: logrotate formula
+maintainer: SaltStack Formulas
 license: Apache-2.0
 summary: Verify that the logrotate formula is setup and configured correctly
 supports:
@@ -10,3 +10,5 @@ supports:
   - platform-name: fedora
   - platform-name: opensuse
   - platform-name: suse
+  - platform-name: freebsd
+  - platform-name: amazon
