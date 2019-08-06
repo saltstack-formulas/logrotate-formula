@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 Ubuntu:
   default_config:
     su: root syslog
