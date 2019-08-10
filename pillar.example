@@ -1,16 +1,17 @@
-# vim: sts=2 ts=2 sw=2 et ai
-
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 logrotate:
   # default OS values can be overridden in 'lookup' dict
-  #lookup:
-    #pkg: logrotate
-    #service: crond
+  # lookup:
+  #   pkg: logrotate
+  #   service: crond
   default_config:
-    weekly: True
+    weekly: true
     rotate: 52
-    create: True
-    compress: True
-    dateext: True
+    create: true
+    compress: true
+    dateext: true
   jobs:
     /tmp/var/log/mysql/error:
       config:
@@ -23,7 +24,7 @@ logrotate:
         - create 640 root adm
         - sharedscripts
     mysql:
-      path: 
+      path:
         - /tmp/var/log/mysql/*.log
       config:
         - weekly
@@ -45,7 +46,7 @@ logrotate:
       config:
         - sharedscripts
         - postrotate
-        -   /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+        - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
         - endscript
     nginx:
       contents: |
@@ -66,4 +67,3 @@ logrotate:
             invoke-rc.d nginx rotate >/dev/null 2>&1
           endscript
         }
-

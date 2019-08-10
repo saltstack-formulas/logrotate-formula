@@ -1,19 +1,22 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 Arch:
   service: logrotate.timer
   default_config:
     tabooext: + .pacorig .pacnew .pacsave
 Debian:
   default_config:
-    compress: True
+    compress: true
 RedHat:
   pkg: cronie
   service: crond
   default_config:
-    dateext: True
+    dateext: true
 Suse:
-  login_records_jobs: False
+  login_records_jobs: false
   default_config:
-    dateext: True
+    dateext: true
     compresscmd: /usr/bin/xz
     uncompresscmd: /usr/bin/xzdec
 Gentoo:
@@ -21,7 +24,7 @@ Gentoo:
   service: cronie
   default_config:
     tabooext: + .keep
-    dateext: True
+    dateext: true
 FreeBSD:
   conf_file: /usr/local/etc/logrotate.conf
   include_dir: /usr/local/etc/logrotate.d
