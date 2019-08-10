@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.11.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.10.0...v0.11.0>`_ (2019-08-10)
+--------------------------------------------------------------------------------------------------------------
+
+Features
+^^^^^^^^
+
+
+* **yamllint:** include for this repo and apply rules throughout (\ `86aed1e <https://github.com/saltstack-formulas/logrotate-formula/commit/86aed1e>`_\ )
+
 `0.10.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.9.0...v0.10.0>`_ (2019-06-25)
 -------------------------------------------------------------------------------------------------------------
 
