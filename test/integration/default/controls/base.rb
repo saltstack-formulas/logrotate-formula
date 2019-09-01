@@ -3,7 +3,7 @@
 title 'Test logrotate installation'
 
 case os[:name]
-when 'redhat', 'centos', 'fedora'
+when 'redhat', 'centos', 'fedora', 'amazon'
   pkg = 'cronie'
 else
   pkg = 'logrotate'
@@ -27,7 +27,7 @@ describe file('/etc/logrotate.d') do
 end
 
 case os[:name]
-when 'redhat', 'centos', 'fedora'
+when 'redhat', 'centos', 'fedora', 'amazon'
   service = 'crond'
 else
   service = 'cron'
