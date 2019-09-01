@@ -2,6 +2,21 @@
 Changelog
 =========
 
+`0.11.1 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.0...v0.11.1>`_ (2019-09-01)
+--------------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+travis:** replace EOL pre-salted images (\ `cc3fa62 <https://github.com/saltstack-formulas/logrotate-formula/commit/cc3fa62>`_\ )
+
+Tests
+^^^^^
+
+
+* **inspec:** improve to work on ``amazon`` as well (\ `be09e0d <https://github.com/saltstack-formulas/logrotate-formula/commit/be09e0d>`_\ )
+
 `0.11.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.10.0...v0.11.0>`_ (2019-08-10)
 --------------------------------------------------------------------------------------------------------------
 
