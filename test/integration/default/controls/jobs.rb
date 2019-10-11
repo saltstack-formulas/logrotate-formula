@@ -1,4 +1,4 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
 title 'Test logrotate jobs configuration'
 
@@ -66,5 +66,4 @@ describe file('/etc/logrotate.d/nginx') do
   its('content') { should include '  fi \\' }
   its('content') { should include 'postrotate' }
   its('content') { should include '  invoke-rc.d nginx rotate >/dev/null 2>&1' }
-
 end
