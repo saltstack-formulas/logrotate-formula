@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.11.2](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.1...v0.11.2) (2019-10-11)
+
+
+### Bug Fixes
+
+* **rubocop:** add fixes using `rubocop --safe-auto-correct` ([](https://github.com/saltstack-formulas/logrotate-formula/commit/de80802))
+* **rubocop:** fix remaining errors manually ([](https://github.com/saltstack-formulas/logrotate-formula/commit/401493b))
+
+
+### Continuous Integration
+
+* **kitchen:** change `log_level` to `debug` instead of `info` ([](https://github.com/saltstack-formulas/logrotate-formula/commit/e98975f))
+* **kitchen:** install required packages to bootstrapped `opensuse` [skip ci] ([](https://github.com/saltstack-formulas/logrotate-formula/commit/4e76aa3))
+* **kitchen:** use bootstrapped `opensuse` images until `2019.2.2` [skip ci] ([](https://github.com/saltstack-formulas/logrotate-formula/commit/26582d7))
+* **platform:** add `arch-base-latest` (commented out for now) [skip ci] ([](https://github.com/saltstack-formulas/logrotate-formula/commit/7e0f2b4))
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job ([](https://github.com/saltstack-formulas/logrotate-formula/commit/a66f4fe))
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job ([](https://github.com/saltstack-formulas/logrotate-formula/commit/f31e348))
+* use `dist: bionic` & apply `opensuse-leap-15` SCP error workaround ([](https://github.com/saltstack-formulas/logrotate-formula/commit/b836a66))
+* **travis:** merge `rubocop` linter into main `lint` job ([](https://github.com/saltstack-formulas/logrotate-formula/commit/b8d7987))
+* **yamllint:** add rule `empty-values` & use new `yaml-files` setting ([](https://github.com/saltstack-formulas/logrotate-formula/commit/7544833))
+
 ## [0.11.1](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.0...v0.11.1) (2019-09-01)
 
 
