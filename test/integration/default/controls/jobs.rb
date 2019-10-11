@@ -61,7 +61,9 @@ describe file('/etc/logrotate.d/nginx') do
   its('content') { should include 'compress' }
   its('content') { should include 'delaycompress' }
   its('content') { should include 'prerotate' }
-  its('content') { should include 'if [ -d /etc/logrotate.d/httpd-prerotate ]; then \\' }
+  its('content') do
+    should include 'if [ -d /etc/logrotate.d/httpd-prerotate ]; then \\'
+  end
   its('content') { should include '    run-parts /etc/logrotate.d/httpd-prerotate; \\' }
   its('content') { should include '  fi \\' }
   its('content') { should include 'postrotate' }
