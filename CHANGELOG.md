@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.11.3](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.2...v0.11.3) (2020-03-22)
+
+
+### Bug Fixes
+
+* **release.config.js:** use full commit hash in commit link [skip ci] ([c79d42e](https://github.com/saltstack-formulas/logrotate-formula/commit/c79d42e0e0d9ef87aa697969ee5027a16d143595))
+
+
+### Continuous Integration
+
+* **gemfile:** restrict `train` gem version until upstream fix [skip ci] ([e6a2d52](https://github.com/saltstack-formulas/logrotate-formula/commit/e6a2d52a4c6b448e136618cbf493a360ed18a6c7))
+* **kitchen:** avoid using bootstrap for `master` instances [skip ci] ([6200869](https://github.com/saltstack-formulas/logrotate-formula/commit/6200869f7a04a4b2f69d763744e65047f879f2dd))
+* **kitchen:** ensure `cron` installed on `Debian` ([4401a20](https://github.com/saltstack-formulas/logrotate-formula/commit/4401a206710af159c04c95ea31d2a36585233c46))
+* **kitchen:** use `debian-10-master-py3` instead of `develop` [skip ci] ([7ba188f](https://github.com/saltstack-formulas/logrotate-formula/commit/7ba188f535502e641a0a429a65fa0e0f788ef7b9))
+* **kitchen:** use `develop` image until `master` is ready (`amazonlinux`) [skip ci] ([c4a1fa9](https://github.com/saltstack-formulas/logrotate-formula/commit/c4a1fa9f6ffc6ef5b8b93d0d71719184294b3217))
+* **kitchen+travis:** upgrade matrix after `2019.2.2` release [skip ci] ([74ab7a1](https://github.com/saltstack-formulas/logrotate-formula/commit/74ab7a144d73c9159e078a8711edfe1df2dc191e))
+* **travis:** apply changes from build config validation [skip ci] ([4e65a71](https://github.com/saltstack-formulas/logrotate-formula/commit/4e65a7197b637e9f243a01be52f9b67e148c708e))
+* **travis:** opt-in to `dpl v2` to complete build config validation [skip ci] ([05f9738](https://github.com/saltstack-formulas/logrotate-formula/commit/05f973872e814545dadb991eedbd93333330db48))
+* **travis:** quote pathspecs used with `git ls-files` [skip ci] ([b7ff28d](https://github.com/saltstack-formulas/logrotate-formula/commit/b7ff28d630908a0962b50a4934bec42fd062b304))
+* **travis:** run `shellcheck` during lint job [skip ci] ([b60e2ab](https://github.com/saltstack-formulas/logrotate-formula/commit/b60e2abf734bbd6ea0c11559fc6f965b28a9ced9))
+* **travis:** update `salt-lint` config for `v0.0.10` [skip ci] ([a75723c](https://github.com/saltstack-formulas/logrotate-formula/commit/a75723cbe59b1a4c55c809bde580f6b302447d76))
+* **travis:** use `major.minor` for `semantic-release` version [skip ci] ([d08d9bf](https://github.com/saltstack-formulas/logrotate-formula/commit/d08d9bfa06300073e768d7a7b1471af3cc89a203))
+* **travis:** use build config validation (beta) [skip ci] ([ef455ff](https://github.com/saltstack-formulas/logrotate-formula/commit/ef455fffae2dce9c11fdfaa877fb0003a402890d))
+
+
+### Documentation
+
+* **contributing:** remove to use org-level file instead [skip ci] ([01493e9](https://github.com/saltstack-formulas/logrotate-formula/commit/01493e95a947306bd0c2c43c5f076c18cb60843b))
+* **readme:** update link to `CONTRIBUTING` [skip ci] ([d2ee252](https://github.com/saltstack-formulas/logrotate-formula/commit/d2ee2524cdc8ae37e44ea2d002ebf7b0de6ff466))
+
+
+### Performance Improvements
+
+* **travis:** improve `salt-lint` invocation [skip ci] ([ebd94f0](https://github.com/saltstack-formulas/logrotate-formula/commit/ebd94f078e2418ebd9f738150da223e4bef9b807))
+
 ## [0.11.2](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.1...v0.11.2) (2019-10-11)
 
 
