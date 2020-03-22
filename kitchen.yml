@@ -159,7 +159,7 @@ suites:
     provisioner:
       state_top:
         base:
-          'G@os_family:Suse':
+          'G@os_family:Suse or G@os:Debian':
             - states.cron
           '*':
             - logrotate
