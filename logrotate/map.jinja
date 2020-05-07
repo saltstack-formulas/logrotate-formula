@@ -1,25 +1,28 @@
 # -*- coding: utf-8 -*-
 # vim: ft=jinja
 
-{% import_yaml 'logrotate/defaults.yaml' as default_settings %}
-{% import_yaml "logrotate/osfamilymap.yaml" as os_family_map %}
-{% import_yaml "logrotate/osmap.yaml" as os_map %}
+{%- import_yaml "logrotate/defaults.yaml" as default_settings %}
+{%- import_yaml "logrotate/osfamilymap.yaml" as osfamilymap %}
+{%- import_yaml "logrotate/osmap.yaml" as osmap %}
 
-{% set osfam = salt['grains.filter_by'](
-    os_family_map,
-    grain='os_family',
-    ) or {} %}
-{% set os = salt['grains.filter_by'](
-    os_map,
-    grain='os',
-    ) or {} %}
+{#- Retrieve the config dict only once #}
+{%- set _config = salt['config.get']('logrotate', default={}) %}
+{%- set defaults = salt['grains.filter_by'](
+      default_settings,
+      default='logrotate',
+      merge=salt['grains.filter_by'](
+        osfamilymap,
+        grain='os_family',
+        merge=salt['grains.filter_by'](
+          osmap,
+          grain='os',
+          merge=salt['grains.filter_by'](
+            _config,
+            default='lookup'
+          )
+        )
+      )
+    )
+%}
 
-{% do salt['defaults.merge'](default_settings['logrotate'], osfam) %}
-{% do salt['defaults.merge'](default_settings['logrotate'], os) %}
-
-{% set logrotate = salt['pillar.get'](
-    'logrotate:lookup',
-    default=default_settings['logrotate'],
-    merge=True,
-    ) %}
-
+{%- set logrotate = defaults %}

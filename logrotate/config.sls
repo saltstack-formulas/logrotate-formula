@@ -11,6 +11,8 @@ logrotate-config:
     - user: {{ salt['pillar.get']('logrotate:config:user', logrotate.user) }}
     - group: {{ salt['pillar.get']('logrotate:config:group', logrotate.group) }}
     - mode: {{ salt['pillar.get']('logrotate:config:mode', '644') }}
+    - context:
+        logrotate: {{ logrotate|tojson }}
 
 logrotate-directory:
   file.directory:
