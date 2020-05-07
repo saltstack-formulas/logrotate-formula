@@ -2,6 +2,23 @@
 Changelog
 =========
 
+`0.11.4 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.3...v0.11.4>`_ (2020-05-07)
+--------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* make necessary modifications to get working on ``salt-ssh`` (\ `57c88a8 <https://github.com/saltstack-formulas/logrotate-formula/commit/57c88a81403726431377acf3e87fec6abae34b1f>`_\ ), closes `/freenode.logbot.info/saltstack-formulas/20200506#c3811885-c3812572 <https://github.com//freenode.logbot.info/saltstack-formulas/20200506/issues/c3811885-c3812572>`_
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile.lock:** add to repo with updated ``Gemfile`` [skip ci] (\ `a5cf505 <https://github.com/saltstack-formulas/logrotate-formula/commit/a5cf505cc018180361a6f2c9d9c21b4595f2632a>`_\ )
+* **kitchen+travis:** remove ``master-py2-arch-base-latest`` [skip ci] (\ `bf6f940 <https://github.com/saltstack-formulas/logrotate-formula/commit/bf6f9406daad33586aef93a864564206642ffeac>`_\ )
+* **workflows/commitlint:** add to repo [skip ci] (\ `4c2a90b <https://github.com/saltstack-formulas/logrotate-formula/commit/4c2a90bccd53a6079aac13cacafc396ad28660c3>`_\ )
+
 `0.11.3 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.2...v0.11.3>`_ (2020-03-22)
 --------------------------------------------------------------------------------------------------------------
 
