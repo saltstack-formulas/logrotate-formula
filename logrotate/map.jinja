@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
 # vim: ft=jinja
 
-{%- import_yaml "logrotate/defaults.yaml" as default_settings %}
-{%- import_yaml "logrotate/osfamilymap.yaml" as osfamilymap %}
-{%- import_yaml "logrotate/osmap.yaml" as osmap %}
+{#- Get the `tplroot` from `tpldir` #}
+{%- set tplroot = tpldir.split('/')[0] %}
+{#- Start imports as #}
+{%- import_yaml tplroot ~ "/defaults.yaml" as default_settings %}
+{%- import_yaml tplroot ~ "/osfamilymap.yaml" as osfamilymap %}
+{%- import_yaml tplroot ~ "/osmap.yaml" as osmap %}
+{%- import_yaml tplroot ~ "/osfingermap.yaml" as osfingermap %}
 
 {#- Retrieve the config dict only once #}
-{%- set _config = salt['config.get']('logrotate', default={}) %}
+{%- set _config = salt['config.get'](tplroot, default={}) %}
+
 {%- set defaults = salt['grains.filter_by'](
       default_settings,
-      default='logrotate',
+      default=tplroot,
       merge=salt['grains.filter_by'](
         osfamilymap,
         grain='os_family',
@@ -17,12 +22,30 @@
           osmap,
           grain='os',
           merge=salt['grains.filter_by'](
-            _config,
-            default='lookup'
+            osfingermap,
+            grain='osfinger',
+            merge=salt['grains.filter_by'](
+              _config,
+              default='lookup'
+            )
           )
         )
       )
     )
 %}
 
-{%- set logrotate = defaults %}
+{%- set config = salt['grains.filter_by'](
+      {'defaults': defaults},
+      default='defaults',
+      merge=_config
+    )
+%}
+
+{#- Change **logrotate** to match with your formula's name and then remove this line #}
+{%- set logrotate = config %}
+
+{#- Post-processing for specific non-YAML customisations #}
+{%- if grains.os == 'MacOS' %}
+{%-   set macos_group = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
+{%-   do logrotate.update({'rootgroup': macos_group}) %}
+{%- endif %}
