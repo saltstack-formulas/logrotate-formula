@@ -2,6 +2,23 @@
 Changelog
 =========
 
+`0.11.5 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.4...v0.11.5>`_ (2020-06-29)
+--------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **debian-10:** disable login_records, they're managed by the package (\ `335c9e6 <https://github.com/saltstack-formulas/logrotate-formula/commit/335c9e63087a4d6b93d1283547cc4094bcf5d581>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen:** use ``saltimages`` Docker Hub where available [skip ci] (\ `8f32221 <https://github.com/saltstack-formulas/logrotate-formula/commit/8f32221ba450b14db5227f4a579cdcfd1876a67d>`_\ )
+* **kitchen+travis:** use latest pre-salted images [skip ci] (\ `e18246d <https://github.com/saltstack-formulas/logrotate-formula/commit/e18246d89bc83097ae1ee1ab887b884b7a2ad84d>`_\ )
+* **travis:** add notifications => zulip [skip ci] (\ `d1c1a81 <https://github.com/saltstack-formulas/logrotate-formula/commit/d1c1a81aa2a6ff62796dfa04aba6e093a2129a5e>`_\ )
+
 `0.11.4 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.3...v0.11.4>`_ (2020-05-07)
 --------------------------------------------------------------------------------------------------------------
 
