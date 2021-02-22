@@ -2,39 +2,63 @@
 
 title 'Test logrotate installation'
 
-case os[:name]
-when 'redhat', 'centos', 'fedora', 'amazon'
-  pkg = 'cronie'
-else
-  pkg = 'logrotate'
-end
-describe package(pkg) do
-  it { should be_installed }
+control 'logrotate-pkg.pkg.installed' do
+  title 'The required package should be installed'
+
+  pkg =
+    case platform[:name]
+    when 'redhat', 'centos', 'fedora', 'amazon', 'oracle'
+      'cronie'
+    else
+      'logrotate'
+    end
+
+  describe package(pkg) do
+    it { should be_installed }
+  end
 end
 
-describe file('/etc/logrotate.conf') do
-  it { should exist }
-  it { should be_owned_by 'root' }
-  it { should be_grouped_into 'root' }
-  its('mode') { should cmp '0644' }
+control 'logrotate-config.file.managed' do
+  title 'Verify the configuration file'
+
+  describe file('/etc/logrotate.conf') do
+    it { should exist }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    its('mode') { should cmp '0644' }
+  end
 end
 
-describe file('/etc/logrotate.d') do
-  it { should be_directory }
-  it { should be_owned_by 'root' }
-  it { should be_grouped_into 'root' }
-  its('mode') { should cmp '0755' }
+control 'logrotate-directory.file.directory' do
+  title 'Verify the `.d` directory'
+
+  describe file('/etc/logrotate.d') do
+    it { should be_directory }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    its('mode') { should cmp '0755' }
+  end
 end
 
-case os[:name]
-when 'redhat', 'centos', 'fedora', 'amazon'
-  service = 'crond'
-else
-  service = 'cron'
-end
 
-describe service(service) do
-  it { should be_installed }
-  it { should be_enabled }
-  it { should be_running }
+control 'logrotate.service.running' do
+  title 'The service should be installed, enabled and running'
+
+  only_if('Disabled on Arch Linux') do
+    !%w[arch].include?(platform[:name])
+  end
+
+  service =
+    case platform[:name]
+    when 'redhat', 'centos', 'fedora', 'amazon', 'oracle'
+      'crond'
+    else
+      'cron'
+    end
+
+  describe service(service) do
+    it { should be_installed }
+    it { should be_enabled }
+    it { should be_running }
+  end
 end
