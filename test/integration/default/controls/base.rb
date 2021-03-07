@@ -40,7 +40,6 @@ control 'logrotate-directory.file.directory' do
   end
 end
 
-
 control 'logrotate.service.running' do
   title 'The service should be installed, enabled and running'
 
