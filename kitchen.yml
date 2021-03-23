@@ -317,6 +317,7 @@ suites:
           'G@os_family:Suse or G@os_family:Debian':
             - states.cron
           '*':
+            - logrotate._mapdata
             - logrotate
             - logrotate.jobs
       pillars:
