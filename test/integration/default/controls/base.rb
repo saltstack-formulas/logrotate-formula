@@ -6,8 +6,8 @@ control 'logrotate-pkg.pkg.installed' do
   title 'The required package should be installed'
 
   pkg =
-    case platform[:name]
-    when 'redhat', 'centos', 'fedora', 'amazon', 'oracle'
+    case platform[:family]
+    when 'redhat', 'fedora'
       'cronie'
     else
       'logrotate'
