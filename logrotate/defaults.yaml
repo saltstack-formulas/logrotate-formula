@@ -13,3 +13,4 @@ logrotate:
     weekly: true
     rotate: 4
     create: true
+  jobs: {}

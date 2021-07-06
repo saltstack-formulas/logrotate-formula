@@ -419,7 +419,6 @@ suites:
           '*':
             - logrotate._mapdata
             - logrotate
-            - logrotate.jobs
       pillars:
         top.sls:
           base:
