@@ -2,6 +2,43 @@
 Changelog
 =========
 
+`0.12.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.5...v0.12.0>`_ (2021-07-07)
+--------------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **3003.1:** update inc. AlmaLinux, Rocky & ``rst-lint`` [skip ci] (\ `bb6bfac <https://github.com/saltstack-formulas/logrotate-formula/commit/bb6bfac80eade092222776d63040248ddd6bce6e>`_\ )
+* **commitlint:** ensure ``upstream/master`` uses main repo URL [skip ci] (\ `ac5a57c <https://github.com/saltstack-formulas/logrotate-formula/commit/ac5a57c76d171492bb87be9476514e26d32016d2>`_\ )
+* **gemfile+lock:** use ``ssf`` customised ``kitchen-docker`` repo [skip ci] (\ `7368305 <https://github.com/saltstack-formulas/logrotate-formula/commit/7368305919c2ac67e94e5c1f017e909957733659>`_\ )
+* **kitchen+gitlab:** remove Ubuntu 16.04 & Fedora 32 (EOL) [skip ci] (\ `1f55b57 <https://github.com/saltstack-formulas/logrotate-formula/commit/1f55b57a61278f96926566aa48c25026e5740e24>`_\ )
+* add ``arch-master`` to matrix and update ``.travis.yml`` [skip ci] (\ `84b2f6a <https://github.com/saltstack-formulas/logrotate-formula/commit/84b2f6aa991da969a28c455e6b7f8b4ed69d8ce9>`_\ )
+* **gitlab-ci:** add ``rubocop`` linter (with ``allow_failure``\ ) [skip ci] (\ `1fc52cd <https://github.com/saltstack-formulas/logrotate-formula/commit/1fc52cd2339c8ecef93de9fca4b9edcfd16464c3>`_\ )
+* **gitlab-ci:** use GitLab CI as Travis CI replacement (\ `94c2cf7 <https://github.com/saltstack-formulas/logrotate-formula/commit/94c2cf7d2cc49802fda5baee93efcc1509227ffe>`_\ )
+* **kitchen+ci:** use latest pre-salted images (after CVE) [skip ci] (\ `406dbbb <https://github.com/saltstack-formulas/logrotate-formula/commit/406dbbb4e594bc9ff14267f39d3acaca77510860>`_\ )
+* **kitchen+gitlab:** adjust matrix to add ``3003`` [skip ci] (\ `b198955 <https://github.com/saltstack-formulas/logrotate-formula/commit/b198955b5f324323c51dbdac13ea5825f424656f>`_\ )
+* **kitchen+gitlab-ci:** use latest pre-salted images [skip ci] (\ `ea66a0d <https://github.com/saltstack-formulas/logrotate-formula/commit/ea66a0d2b85635dc66088caac94614191a772a9d>`_\ )
+* **pre-commit:** add to formula [skip ci] (\ `e506d69 <https://github.com/saltstack-formulas/logrotate-formula/commit/e506d6954ddba83146afc98e9338e68a8ffbfcb6>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `267bb94 <https://github.com/saltstack-formulas/logrotate-formula/commit/267bb944a4b889234b438b46bf03e7b8d13482b4>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `bd1dc81 <https://github.com/saltstack-formulas/logrotate-formula/commit/bd1dc81dcbf7f031cb58ce74cb43443194a24b1d>`_\ )
+* **pre-commit:** update hook for ``rubocop`` [skip ci] (\ `2c964b0 <https://github.com/saltstack-formulas/logrotate-formula/commit/2c964b09e4b3450356e5bc1bac7a880fc2cbed18>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **jobs:** add ``jobs: {}`` to defaults and state to init (\ `c3b64d3 <https://github.com/saltstack-formulas/logrotate-formula/commit/c3b64d37a7c06d143df3a474d9129cb860fe17c7>`_\ ), closes `#57 <https://github.com/saltstack-formulas/logrotate-formula/issues/57>`_
+
+Tests
+^^^^^
+
+
+* **alma+rocky:** add platforms (based on CentOS 8) [skip ci] (\ `dc63042 <https://github.com/saltstack-formulas/logrotate-formula/commit/dc630420a5715f26276707adf00866ef882d4cb4>`_\ )
+* standardise use of ``share`` suite & ``_mapdata`` state [skip ci] (\ `650cfad <https://github.com/saltstack-formulas/logrotate-formula/commit/650cfaddf026badfb926bb39643021d9d4918880>`_\ )
+* **base:** update from ``template-formula`` and Arch Linux exclusion (\ `09d4f5a <https://github.com/saltstack-formulas/logrotate-formula/commit/09d4f5a0341f1f4c5644742631c749f1cb78409d>`_\ )
+* **rubocop:** fix violation [skip ci] (\ `3f5edef <https://github.com/saltstack-formulas/logrotate-formula/commit/3f5edefc18b606fbb205de22d0286393714750e6>`_\ )
+
 `0.11.5 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.4...v0.11.5>`_ (2020-06-29)
 --------------------------------------------------------------------------------------------------------------
 
