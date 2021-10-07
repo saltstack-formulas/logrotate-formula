@@ -48,8 +48,8 @@ control 'logrotate.service.running' do
   end
 
   service =
-    case platform[:name]
-    when 'redhat', 'centos', 'fedora', 'amazon', 'oracle'
+    case platform[:family]
+    when 'redhat', 'fedora'
       'crond'
     else
       'cron'
