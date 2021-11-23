@@ -2,9 +2,13 @@
 # vim: ft=yaml
 ---
 logrotate:
+  bin: /usr/sbin/logrotate
+  status_dir: /var/lib/logrotate
   pkg: logrotate
   conf_file: '/etc/logrotate.conf'
   include_dir: '/etc/logrotate.d'
+  hourly_conf_file: '/etc/logrotate.hourly.conf'
+  hourly_include_dir: '/etc/logrotate.hourly.d'
   user: root
   group: root
   service: cron

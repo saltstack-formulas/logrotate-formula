@@ -1,0 +1,9 @@
+#!/bin/sh
+
+{{ logrotate.bin  }} -s {{ logrotate.status_dir }}/logrotate.hourly.status {{ logrotate.hourly_conf_file  }}
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate "ALERT exited abnormally with [$EXITVALUE]"
+fi
+
+exit 0
