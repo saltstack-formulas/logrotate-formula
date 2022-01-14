@@ -43,12 +43,10 @@ end
 control 'logrotate.service.running' do
   title 'The service should be installed, enabled and running'
 
-  only_if('Disabled on Arch Linux') do
-    !%w[arch].include?(platform[:name])
-  end
-
   service =
-    case platform[:family]
+    case system.platform[:family]
+    when 'arch'
+      'cronie'
     when 'redhat', 'fedora'
       'crond'
     else
