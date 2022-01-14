@@ -48,6 +48,22 @@ logrotate:
         - postrotate
         - /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
         - endscript
+    nginx_high_traf:
+      path:
+        - /var/log/nginx_high_traf/*.log
+      config:
+        - hourly
+        - missingok
+        - rotate {{ 30 * 24 }}  # keep 1 month's worth of hourly logs
+        - compress
+        - notifempty
+        - dateext
+        - dateformat .%Y-%m-%d-%H00
+        - olddir /var/log/nginx_high_traf/archive
+        - sharedscripts
+        - postrotate
+        - 'kill -USR1 $(cat /var/run/nginx_high_traf.pid)'
+        - endscript
     nginx:
       contents: |
         /var/log/nginx/*.log{

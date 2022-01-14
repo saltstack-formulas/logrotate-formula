@@ -26,6 +26,10 @@ Gentoo:
     tabooext: + .keep
     dateext: true
 FreeBSD:
+  bin: /usr/local/sbin/logrotate
+  status_dir: /var/run
   conf_file: /usr/local/etc/logrotate.conf
+  hourly_conf_file: /usr/local/etc/logrotate.hourly.conf
   include_dir: /usr/local/etc/logrotate.d
+  hourly_include_dir: /usr/local/etc/logrotate.hourly.d
   group: wheel
