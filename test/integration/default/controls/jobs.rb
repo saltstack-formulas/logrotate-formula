@@ -69,3 +69,22 @@ describe file('/etc/logrotate.d/nginx') do
   its('content') { should include 'postrotate' }
   its('content') { should include '  invoke-rc.d nginx rotate >/dev/null 2>&1' }
 end
+
+describe file('/etc/logrotate.hourly.d/nginx_high_traf') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  its('mode') { should cmp '0644' }
+  its('content') { should include '/var/log/nginx_high_traf/*.log' }
+  its('content') { should include 'hourly' }
+  its('content') { should include 'missingok' }
+  its('content') { should include 'rotate 720' }
+  its('content') { should include 'compress' }
+  its('content') { should include 'notifempty' }
+  its('content') { should include 'dateext' }
+  its('content') { should include 'dateformat .%Y-%m-%d-%H00' }
+  its('content') { should include 'olddir /var/log/nginx_high_traf/archive' }
+  its('content') { should include 'sharedscripts' }
+  its('content') { should include 'postrotate' }
+  its('content') { should include 'kill -USR1 $(cat /var/run/nginx_high_traf.pid)' }
+end
