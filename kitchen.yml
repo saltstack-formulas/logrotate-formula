@@ -467,14 +467,14 @@ suites:
   - name: default
     provisioner:
       dependencies:
-        - name: states
-          path: ./test/salt
+        - name: cron
+          repo: git
+          source: https://github.com/saltstack-formulas/cron-formula.git
       state_top:
         base:
-          'G@os_family:Suse or G@os_family:Debian':
-            - states.cron
           '*':
             - logrotate._mapdata
+            - cron
             - logrotate
       pillars:
         top.sls:

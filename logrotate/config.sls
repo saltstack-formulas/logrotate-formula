@@ -4,7 +4,6 @@ include:
   - logrotate
 
 {% set ns = namespace(hourly=False) %}
-{% set jobs = salt['config.get']('logrotate:jobs', {}) %}
 {% for key, value in logrotate.jobs.items() %}
 {% set contents = value.get('contents', False) %}
   {% if 'hourly' in (contents or value.config) %}
