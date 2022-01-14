@@ -1,5 +1,31 @@
 # Changelog
 
+# [0.13.0](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.12.0...v0.13.0) (2022-01-14)
+
+
+### Continuous Integration
+
+* **gemfile+lock:** use `ssf` customised `inspec` repo [skip ci] ([27829b8](https://github.com/saltstack-formulas/logrotate-formula/commit/27829b8969162dcf2deb27b4135ac1dec651348d))
+* **kitchen:** move `provisioner` block & update `run_command` [skip ci] ([42bde9c](https://github.com/saltstack-formulas/logrotate-formula/commit/42bde9c5f53bc9c897b9fa6ccb0fd50c251b2fe8))
+* **kitchen:** use `cron-formula` dependency instead of `cron` state ([4cf2808](https://github.com/saltstack-formulas/logrotate-formula/commit/4cf2808840cc8701347b81018ad41603c534cc0b))
+* **kitchen+ci:** update with `3004` pre-salted images/boxes [skip ci] ([bacce6e](https://github.com/saltstack-formulas/logrotate-formula/commit/bacce6ea8935bfafb56b16aaa217b5b03a8b9168))
+* **kitchen+ci:** update with latest `3003.2` pre-salted images [skip ci] ([e6ee323](https://github.com/saltstack-formulas/logrotate-formula/commit/e6ee323f87819acce9b54f36fb8cfa9ca55c6241))
+* **kitchen+ci:** update with latest CVE pre-salted images [skip ci] ([a1dd441](https://github.com/saltstack-formulas/logrotate-formula/commit/a1dd4415e54651bb021a068fe0cd8cd0e883a827))
+* add Debian 11 Bullseye & update `yamllint` configuration [skip ci] ([0e63e18](https://github.com/saltstack-formulas/logrotate-formula/commit/0e63e188eff36282a5c5a3525afb3c7a6cfc7676))
+
+
+### Features
+
+* **hourly:** add configuration to enable hourly jobs ([7b5676b](https://github.com/saltstack-formulas/logrotate-formula/commit/7b5676b9e267fb9bc7b610040a113fa870ee3d23))
+* **hourly:** add hourly job def to pillar.example ([cd4cd1d](https://github.com/saltstack-formulas/logrotate-formula/commit/cd4cd1d670b1a83b6a58dcaa96bd0db6ce380a2e))
+
+
+### Tests
+
+* **alma+rocky:** add platforms (finalise dc63042) [skip ci] ([e4ad016](https://github.com/saltstack-formulas/logrotate-formula/commit/e4ad016b97293e8e4d74864c6afbfdeb308b38bf))
+* **base:** re-enable Arch Linux test (possible due to `cron-formula`) ([2136711](https://github.com/saltstack-formulas/logrotate-formula/commit/2136711a12ba4e1989afa160808d5a2851f25793))
+* **jobs:** add `hourly` test ([69677b0](https://github.com/saltstack-formulas/logrotate-formula/commit/69677b0c02623d4c4c7954e39c7225864abf9d87))
+
 # [0.12.0](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.5...v0.12.0) (2021-07-07)
 
 
