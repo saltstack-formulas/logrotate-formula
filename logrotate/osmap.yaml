@@ -4,3 +4,4 @@
 Ubuntu:
   default_config:
     su: root syslog
+    login_records_jobs: false
