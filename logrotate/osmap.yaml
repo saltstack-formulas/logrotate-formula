@@ -2,5 +2,6 @@
 # vim: ft=yaml
 ---
 Ubuntu:
+  login_records_jobs: false
   default_config:
     su: root syslog
