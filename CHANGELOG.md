@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.13.1](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.0...v0.13.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* **ubuntu:** removed breaking wtmp btmp ([012bfef](https://github.com/saltstack-formulas/logrotate-formula/commit/012bfef7d7733300059375edaf9b93aca343cd4d))
+
+
+### Continuous Integration
+
+* update linters to latest versions [skip ci] ([eb6d2ea](https://github.com/saltstack-formulas/logrotate-formula/commit/eb6d2ea9be3f8203e5e48c3c579614f6761b4e8d))
+* **gemfile:** allow rubygems proxy to be provided as an env var [skip ci] ([d545fb2](https://github.com/saltstack-formulas/logrotate-formula/commit/d545fb2278b0b1c702f39d59228d0a74406aa3d2))
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] ([d71215b](https://github.com/saltstack-formulas/logrotate-formula/commit/d71215bd8174decbec56fa9a5b098564ab7b3584))
+
+
+### Tests
+
+* **system:** add `build_platform_codename` [skip ci] ([4722110](https://github.com/saltstack-formulas/logrotate-formula/commit/4722110f28e5a286f23292084026cd3c521bb38f))
+
 # [0.13.0](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.12.0...v0.13.0) (2022-01-14)
 
 

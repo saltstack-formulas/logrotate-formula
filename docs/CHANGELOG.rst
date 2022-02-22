@@ -2,6 +2,59 @@
 Changelog
 =========
 
+`0.13.1 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.0...v0.13.1>`_ (2022-02-22)
+--------------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **ubuntu:** removed breaking wtmp btmp (\ `012bfef <https://github.com/saltstack-formulas/logrotate-formula/commit/012bfef7d7733300059375edaf9b93aca343cd4d>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* update linters to latest versions [skip ci] (\ `eb6d2ea <https://github.com/saltstack-formulas/logrotate-formula/commit/eb6d2ea9be3f8203e5e48c3c579614f6761b4e8d>`_\ )
+* **gemfile:** allow rubygems proxy to be provided as an env var [skip ci] (\ `d545fb2 <https://github.com/saltstack-formulas/logrotate-formula/commit/d545fb2278b0b1c702f39d59228d0a74406aa3d2>`_\ )
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] (\ `d71215b <https://github.com/saltstack-formulas/logrotate-formula/commit/d71215bd8174decbec56fa9a5b098564ab7b3584>`_\ )
+
+Tests
+^^^^^
+
+
+* **system:** add ``build_platform_codename`` [skip ci] (\ `4722110 <https://github.com/saltstack-formulas/logrotate-formula/commit/4722110f28e5a286f23292084026cd3c521bb38f>`_\ )
+
+`0.13.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.12.0...v0.13.0>`_ (2022-01-14)
+--------------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile+lock:** use ``ssf`` customised ``inspec`` repo [skip ci] (\ `27829b8 <https://github.com/saltstack-formulas/logrotate-formula/commit/27829b8969162dcf2deb27b4135ac1dec651348d>`_\ )
+* **kitchen:** move ``provisioner`` block & update ``run_command`` [skip ci] (\ `42bde9c <https://github.com/saltstack-formulas/logrotate-formula/commit/42bde9c5f53bc9c897b9fa6ccb0fd50c251b2fe8>`_\ )
+* **kitchen:** use ``cron-formula`` dependency instead of ``cron`` state (\ `4cf2808 <https://github.com/saltstack-formulas/logrotate-formula/commit/4cf2808840cc8701347b81018ad41603c534cc0b>`_\ )
+* **kitchen+ci:** update with ``3004`` pre-salted images/boxes [skip ci] (\ `bacce6e <https://github.com/saltstack-formulas/logrotate-formula/commit/bacce6ea8935bfafb56b16aaa217b5b03a8b9168>`_\ )
+* **kitchen+ci:** update with latest ``3003.2`` pre-salted images [skip ci] (\ `e6ee323 <https://github.com/saltstack-formulas/logrotate-formula/commit/e6ee323f87819acce9b54f36fb8cfa9ca55c6241>`_\ )
+* **kitchen+ci:** update with latest CVE pre-salted images [skip ci] (\ `a1dd441 <https://github.com/saltstack-formulas/logrotate-formula/commit/a1dd4415e54651bb021a068fe0cd8cd0e883a827>`_\ )
+* add Debian 11 Bullseye & update ``yamllint`` configuration [skip ci] (\ `0e63e18 <https://github.com/saltstack-formulas/logrotate-formula/commit/0e63e188eff36282a5c5a3525afb3c7a6cfc7676>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **hourly:** add configuration to enable hourly jobs (\ `7b5676b <https://github.com/saltstack-formulas/logrotate-formula/commit/7b5676b9e267fb9bc7b610040a113fa870ee3d23>`_\ )
+* **hourly:** add hourly job def to pillar.example (\ `cd4cd1d <https://github.com/saltstack-formulas/logrotate-formula/commit/cd4cd1d670b1a83b6a58dcaa96bd0db6ce380a2e>`_\ )
+
+Tests
+^^^^^
+
+
+* **alma+rocky:** add platforms (finalise dc63042) [skip ci] (\ `e4ad016 <https://github.com/saltstack-formulas/logrotate-formula/commit/e4ad016b97293e8e4d74864c6afbfdeb308b38bf>`_\ )
+* **base:** re-enable Arch Linux test (possible due to ``cron-formula``\ ) (\ `2136711 <https://github.com/saltstack-formulas/logrotate-formula/commit/2136711a12ba4e1989afa160808d5a2851f25793>`_\ )
+* **jobs:** add ``hourly`` test (\ `69677b0 <https://github.com/saltstack-formulas/logrotate-formula/commit/69677b0c02623d4c4c7954e39c7225864abf9d87>`_\ )
+
 `0.12.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.11.5...v0.12.0>`_ (2021-07-07)
 --------------------------------------------------------------------------------------------------------------
 
