@@ -23,7 +23,7 @@ no{{ parameter }}
 # See "man logrotate" for details.
 
 # log files rotation period
-{% for period in ['hourly', 'daily', 'weekly', 'yearly'] -%}
+{% for period in ['hourly', 'daily', 'weekly', 'monthly', 'yearly'] -%}
 {{ set_parameter(period) }}
 {%- endfor %}
 
