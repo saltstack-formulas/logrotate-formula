@@ -35,6 +35,18 @@ logrotate:
         - notifempty
         - create 640 root adm
         - sharedscripts
+    a_monthly_job:
+      path:
+        - /tmp/var/log/a_service/*.log
+      config:
+        - monthly
+        - missingok
+        - rotate 12
+        - compress
+        - delaycompress
+        - notifempty
+        - create 640 root adm
+        - sharedscripts
     syslog:
       path:
         - /var/log/cron
