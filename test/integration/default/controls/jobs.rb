@@ -88,3 +88,19 @@ describe file('/etc/logrotate.hourly.d/nginx_high_traf') do
   its('content') { should include 'postrotate' }
   its('content') { should include 'kill -USR1 $(cat /var/run/nginx_high_traf.pid)' }
 end
+
+describe file('/etc/logrotate.d/a_monthly_job') do
+  it { should be_file }
+  it { should be_owned_by 'root' }
+  it { should be_grouped_into 'root' }
+  its('mode') { should cmp '0644' }
+  its('content') { should include '/var/log/a_service/*.log' }
+  its('content') { should include 'monthly' }
+  its('content') { should include 'missingok' }
+  its('content') { should include 'rotate 12' }
+  its('content') { should include 'compress' }
+  its('content') { should include 'delaycompress' }
+  its('content') { should include 'notifempty' }
+  its('content') { should include 'create 640 root adm' }
+  its('content') { should include 'sharedscripts' }
+end
