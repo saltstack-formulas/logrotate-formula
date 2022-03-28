@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.13.2](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.1...v0.13.2) (2022-03-28)
+
+
+### Bug Fixes
+
+* **conf:** add 'monthly' interval ([b6cc8a9](https://github.com/saltstack-formulas/logrotate-formula/commit/b6cc8a908482997ecd84ac6bbce0607bd759df47))
+
+
+### Tests
+
+* **jobs:** add a monthly job test ([957e689](https://github.com/saltstack-formulas/logrotate-formula/commit/957e6897c052840a16bdd281b3e96132c4f37c01))
+* **jobs:** reorder parameters to match pillar ([3bdc11b](https://github.com/saltstack-formulas/logrotate-formula/commit/3bdc11b5c2b2f2b60d8dfe7b3a493fce532b0c6e))
+
 ## [0.13.1](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.0...v0.13.1) (2022-02-22)
 
 
