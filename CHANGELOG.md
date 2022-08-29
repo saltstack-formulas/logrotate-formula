@@ -1,5 +1,23 @@
 # Changelog
 
+# [0.14.0](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.2...v0.14.0) (2022-08-29)
+
+
+### Continuous Integration
+
+* update `pre-commit` configuration inc. for pre-commit.ci [skip ci] ([df61825](https://github.com/saltstack-formulas/logrotate-formula/commit/df618259eb5b6111138638bef00b07d9383e9570))
+* **kitchen+gitlab:** update for new pre-salted images [skip ci] ([af19654](https://github.com/saltstack-formulas/logrotate-formula/commit/af196541ad64be2e85c9eb8204f8ce08fcd321dd))
+
+
+### Features
+
+* **osfingermap:** add Debian-11 entry to osfingermap.yaml ([756769a](https://github.com/saltstack-formulas/logrotate-formula/commit/756769aeca802cd8586f780b4b0eaeaa22a07fed))
+
+
+### Tests
+
+* **system.rb:** add support for `mac_os_x` [skip ci] ([e8d4e7e](https://github.com/saltstack-formulas/logrotate-formula/commit/e8d4e7eb9e54e6cd510461afc76ed82522346891))
+
 ## [0.13.2](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.1...v0.13.2) (2022-03-28)
 
 
