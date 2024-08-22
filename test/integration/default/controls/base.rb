@@ -49,6 +49,8 @@ control 'logrotate.service.running' do
       'cronie'
     when 'redhat', 'fedora'
       'crond'
+    when 'suse'
+      'logrotate.timer'
     else
       'cron'
     end
