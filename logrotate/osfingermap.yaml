@@ -11,7 +11,4 @@
 # osfingermap: {}
 ---
 # os: Debian
-Debian-10:
-  login_records_jobs: false
-Debian-11:
-  login_records_jobs: false
+osfingermap: {}
