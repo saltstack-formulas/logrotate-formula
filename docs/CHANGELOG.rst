@@ -2,6 +2,15 @@
 Changelog
 =========
 
+`0.14.1 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.14.0...v0.14.1>`_ (2024-12-17)
+--------------------------------------------------------------------------------------------------------------
+
+Tests
+^^^^^
+
+
+* **pre-commit:** update pre-commit hooks (\ `f4ab681 <https://github.com/saltstack-formulas/logrotate-formula/commit/f4ab6819a17f710e32353adce49ec9a2a03083db>`_\ )
+
 `0.14.0 <https://github.com/saltstack-formulas/logrotate-formula/compare/v0.13.2...v0.14.0>`_ (2022-08-29)
 --------------------------------------------------------------------------------------------------------------
 
