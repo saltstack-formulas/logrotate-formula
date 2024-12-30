@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.14.2](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.14.1...v0.14.2) (2024-12-30)
+
+
+### Bug Fixes
+
+* **debian:** disable login_records, they are managed by the package ([db1ada0](https://github.com/saltstack-formulas/logrotate-formula/commit/db1ada02e820d18eb74355278d8085127f8e9573))
+
 ## [0.14.1](https://github.com/saltstack-formulas/logrotate-formula/compare/v0.14.0...v0.14.1) (2024-12-17)
 
 
