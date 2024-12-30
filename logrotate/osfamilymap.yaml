@@ -6,6 +6,7 @@ Arch:
   default_config:
     tabooext: + .pacorig .pacnew .pacsave
 Debian:
+  login_records_jobs: false
   default_config:
     compress: true
 RedHat:
