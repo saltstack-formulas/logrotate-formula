@@ -3,6 +3,8 @@
 
 {% from "logrotate/map.jinja" import logrotate with context %}
 
+{%- if logrotate.service is not none %}
+
 include:
   - logrotate.config
   - logrotate.install
@@ -15,3 +17,5 @@ logrotate:
       - pkg: logrotate-pkg
       - file: logrotate-config
       - file: logrotate-directory
+
+{%- endif %}

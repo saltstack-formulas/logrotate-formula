@@ -15,6 +15,7 @@ RedHat:
   default_config:
     dateext: true
 Suse:
+  service: null
   login_records_jobs: false
   default_config:
     dateext: true
